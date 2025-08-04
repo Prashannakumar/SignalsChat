@@ -1,0 +1,8 @@
+<div class="user-list">
+  <h3>Online Users</h3>
+  <ul>
+    @for (user of users(); track $index) {
+    <li>{{ user }}</li>
+    }
+  </ul>
+</div>

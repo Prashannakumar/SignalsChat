@@ -1,27 +1,111 @@
-# SignalsChat
+# 💬 Angular Signal Chat App (Practice Project)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
+This is a **simple real-time chat application** built with **Angular** and **WebSockets**, designed primarily to **practice and demonstrate Angular Signals** and related reactive patterns.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+- ✅ Real-time chat using WebSocket
+- ✅ Angular **Signals** for reactive state
+- ✅ Message input, display, and auto-scrolling
+- ✅ Tabs UI to switch between chats (or future sections)
+- ✅ Clean signal-based service and component structure
+- ✅ Modular and scalable codebase
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🎯 Learning Goals
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This project was created to:
 
-## Running unit tests
+- Practice **Angular Signals (Writable, Computed, Effects)**
+- Understand **readonly signal patterns**
+- Explore **WebSocket** usage in Angular
+- Learn **component-service communication** using signals
+- Apply **component reactivity** without RxJS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🧠 Signal Features Demonstrated
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| Feature             | How It's Used                                                                 |
+|---------------------|-------------------------------------------------------------------------------|
+| `WritableSignal<T>` | Used in services to hold internal message state (`_messages`)                |
+| `readonly` keyword  | Signal reference is `readonly` to avoid reassignment and encourage discipline |
+| `computed()`        | Used to expose derived state to components (`messages`)                      |
+| `effect()`          | Used to trigger scroll on new message added                                  |
+| `asReadonly()`      | Used optionally to convert writable to readonly when needed                  |
 
-## Further help
+### ✳️ About `readonly` Usage
+We deliberately used:
+```ts
+private readonly _messages = signal<Message[]>([]);
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This is for practice purposes: even though the signal's value is mutable (.set() / .update()), the signal reference cannot be reassigned, reinforcing safe state encapsulation and mutation only inside the service.
+
+📦 Tech Stack
+Angular 17+
+
+TypeScript
+
+WebSocket
+
+Tailwind CSS (optional, for styling)
+
+Node.js + ws (backend)
+
+🖥️ Frontend Setup
+# Clone the repo
+git clone https://github.com/your-username/angular-signal-chat.git
+cd angular-signal-chat
+
+# Install dependencies
+npm install
+
+# Start the dev server
+ng serve
+
+🌐 Backend Setup (WebSocket Server)
+# Go to server folder
+cd server
+
+# Install dependencies
+npm install
+
+# Start WebSocket server
+node index.js
+✅ The server runs on ws://localhost:8080 and accepts simple JSON-based messages.
+
+📁 Project Structure
+src/
+├── app/
+│   ├── services/
+│   │   └── chat.service.ts   # Holds WebSocket logic + signal state
+│   ├── components/
+│   │   ├── chat-box/
+│   │   ├── message-input/
+│   │   └── chat-tabs/
+│   └── models/
+│       └── message.model.ts  # Chat message interface
+server/
+└── index.js                  # WebSocket backend
+
+✅ To-Do / Ideas
+ Add typing indicators
+
+ Add presence (online/offline)
+
+ Store chat history (in memory or localStorage)
+
+ Add username support
+
+ Use effect() for tab syncing or notifications
+
+📚 License
+This project is for personal learning and experimentation. No commercial use intended.
+
+🙋‍♂️ Author
+Built by Prashanna as a Signals practice app.
+
+Feel free to fork and experiment!

@@ -1,0 +1,15 @@
+<div class="chat-room-container" #scrollContainer>
+    @for (msg of messages(); track $index) {
+    <div class="message">
+        <span class="sender">{{msg.sender}}</span>
+        <span class="sender">{{msg.content}}</span>
+        <span class="sender">{{msg.timestamp | date:'shortTIme'}}</span>
+    </div>
+    }
+
+    @if(otherTypingUsers.length > 0){
+    <div class="typing-indicator">
+        {{ otherTypingUsers.join(', ') }} typing...
+    </div>
+    }
+</div>
