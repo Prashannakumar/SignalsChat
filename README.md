@@ -44,7 +44,7 @@ private readonly _messages = signal<Message[]>([]);
 
 This is for practice purposes: even though the signal's value is mutable (.set() / .update()), the signal reference cannot be reassigned, reinforcing safe state encapsulation and mutation only inside the service.
 
-📦 Tech Stack
+### 📦 Tech Stack
 Angular 17+
 
 TypeScript
@@ -55,7 +55,7 @@ Tailwind CSS (optional, for styling)
 
 Node.js + ws (backend)
 
-🖥️ Frontend Setup
+### 🖥️ Frontend Setup
 # Clone the repo
 git clone https://github.com/your-username/angular-signal-chat.git
 cd angular-signal-chat
@@ -66,7 +66,7 @@ npm install
 # Start the dev server
 ng serve
 
-🌐 Backend Setup (WebSocket Server)
+### 🌐 Backend Setup (WebSocket Server)
 # Go to server folder
 cd server
 
@@ -77,7 +77,7 @@ npm install
 node index.js
 ✅ The server runs on ws://localhost:8080 and accepts simple JSON-based messages.
 
-📁 Project Structure
+### 📁 Project Structure
 src/
 ├── app/
 │   ├── services/
@@ -91,7 +91,7 @@ src/
 server/
 └── index.js                  # WebSocket backend
 
-✅ To-Do / Ideas
+### ✅ To-Do / Ideas
  Add typing indicators
 
  Add presence (online/offline)
@@ -102,10 +102,10 @@ server/
 
  Use effect() for tab syncing or notifications
 
-📚 License
+### 📚 License
 This project is for personal learning and experimentation. No commercial use intended.
 
-🙋‍♂️ Author
-Built by Prashanna as a Signals practice app.
+### 🙋‍♂️ Author
+Built by 'https://github.com/Prashannakumar/' as a Signals practice app.
 
 Feel free to fork and experiment!
