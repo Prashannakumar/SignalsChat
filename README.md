@@ -41,6 +41,7 @@ This project was created to:
 We deliberately used:
 ```ts
 private readonly _messages = signal<Message[]>([]);
+```
 
 This is for practice purposes: even though the signal's value is mutable (.set() / .update()), the signal reference cannot be reassigned, reinforcing safe state encapsulation and mutation only inside the service.
 
