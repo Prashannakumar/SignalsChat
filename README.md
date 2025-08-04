@@ -56,29 +56,30 @@ Tailwind CSS (optional, for styling)
 
 Node.js + ws (backend)
 
-### 🖥️ Frontend Setup
-# Clone the repo
+## 🖥️ Frontend Setup
+### Clone the repo
 git clone https://github.com/your-username/angular-signal-chat.git
 cd angular-signal-chat
 
-# Install dependencies
+### Install dependencies
 npm install
 
-# Start the dev server
+### Start the dev server
 ng serve
 
-### 🌐 Backend Setup (WebSocket Server)
-# Go to server folder
+## 🌐 Backend Setup (WebSocket Server)
+## Go to server folder
 cd server
 
-# Install dependencies
+## Install dependencies
 npm install
 
-# Start WebSocket server
+## Start WebSocket server
 node index.js
 ✅ The server runs on ws://localhost:8080 and accepts simple JSON-based messages.
 
-### 📁 Project Structure
+## 📁 Project Structure
+```
 src/
 ├── app/
 │   ├── services/
@@ -91,6 +92,7 @@ src/
 │       └── message.model.ts  # Chat message interface
 server/
 └── index.js                  # WebSocket backend
+```
 
 ### ✅ To-Do / Ideas
  Add typing indicators
