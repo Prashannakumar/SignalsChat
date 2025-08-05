@@ -84,6 +84,7 @@ src/
 ├── app/
 │   ├── services/
 │   │   └── chat.service.ts   # Holds WebSocket logic + signal state
+|   |   └── networkStatus.service.ts   # Holds internet status check logic + signal state
 │   ├── components/
 │   │   ├── chat-box/
 │   │   ├── message-input/
