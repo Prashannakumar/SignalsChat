@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ChatRoomComponent } from './components/chat-room/chat-room.component';
 import { MessageInputComponent } from './components/message-input/message-input.component';
 import { ChatService } from './services/chat.service';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { FormsModule } from '@angular/forms';
+import { NetworkStatusService } from './services/networkStatus.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,12 @@ export class AppComponent {
   username: string = '';
   isUsernameSet: boolean = false;
 
-  constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService, private networkStatusSvc: NetworkStatusService) {
+    effect(() => {
+      const online = this.networkStatusSvc.isOnline(); // this tracks the signal
+      console.log('Network status changed:', online ? 'Online' : 'Offline');
+    });
+  }
 
   ngOnInit(): void {
     const savedName = localStorage.getItem('chat-username');
